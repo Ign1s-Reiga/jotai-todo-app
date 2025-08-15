@@ -1,0 +1,54 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 80%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+
+  & > input {
+    flex: 1;
+    padding: 0 0.4rem;
+    font-size: medium;
+  }
+  & > button {
+    max-width: min-content;
+    padding: 0.4rem 1.2rem;
+    font-size: medium;
+  }
+}
+
+.list {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.8rem;
+  background-color: lavender;
+  border-radius: 0.4rem;
+}
+
+.delete {
+  border-style: none;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+}
