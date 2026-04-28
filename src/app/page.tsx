@@ -2,10 +2,12 @@
 
 import styles from '@styles/page.module.css';
 import { v4 as uuidv4 } from 'uuid';
-import { atom, useAtom } from 'jotai';
+import { useAtom } from 'jotai';
 import { useRef } from 'react';
+import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 
-const todoListAtom = atom<{id: string; todo: string}[]>([]);
+const storage = createJSONStorage<{id: string; todo: string}[]>(() => localStorage);
+const todoListAtom = atomWithStorage<{id: string; todo: string}[]>('todoList', [], storage);
 
 export default function Index() {
   const [todoList, setTodoList] = useAtom(todoListAtom);
